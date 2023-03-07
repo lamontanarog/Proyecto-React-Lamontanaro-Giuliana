@@ -1,18 +1,25 @@
 import { react, useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
-import ItemDetailContainer from "../ItemDetailContainerr/ItemDetailContainer";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
   const [products, setProducts] = useState([]);
+  const {id} = useParams();
 
+  if (id) {
+      var url = `https://fakestoreapi.com/products/category/${id}`
+  }  else{
+      var url = "https://fakestoreapi.com/products"
+  };
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [id]);
 
   const getProducts = () => {
       axios
-    .get("https://fakestoreapi.com/products") // Llamamos a la api y nos responde una promise
+    .get(url) // Llamamos a la api y nos responde una promise
       .then((res) => {
           setProducts(res.data)}) //Despues de llamar a la api, pasamos la respuesta a formato json y guardamos el mismo en products mediante setProducts
           .catch( (error) => {
@@ -21,7 +28,7 @@ function ItemListContainer() {
           console.log("products", products); //Verificamos que nos este trayendo los productos 
   }
   return (
-      <ItemDetailContainer products={products}/>
+      <ItemList products={products}/>
   );
 }
 

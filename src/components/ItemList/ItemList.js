@@ -1,21 +1,17 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
-import { Link, NavLink } from 'react-router-dom';
+import React from "react";
+import CardGroup from "react-bootstrap/CardGroup";
+import Row from "react-bootstrap/Row";
+import ItemDetailContainer from "../ItemDetailContainerr/ItemDetailContainer";
 
-
- function ItemList({product}) {
-  return (
-    <Card key={product.id} style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={product.image} />
-    <Card.Body>
-      <Card.Title>{product.title}</Card.Title>
-      <Card.Text>{product.description}</Card.Text>
-     
-    </Card.Body>
-  </Card>
-  
-)
+function ItemList({ products }) {
+return (
+    <CardGroup>
+    <Row xs={2} md={3} className="g-1">
+        {products.map((product) => (
+        <ItemDetailContainer product={product} />
+        ))}
+    </Row>
+    </CardGroup>
+);
 }
-
-
-export default ItemDetailContainer;
+export default ItemList;
