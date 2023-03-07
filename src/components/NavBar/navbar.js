@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import {LinkContainer} from 'react-router-bootstrap'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
 
