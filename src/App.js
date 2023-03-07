@@ -1,4 +1,3 @@
-
 import './App.css';
 import NavBar from './components/NavBar/navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -10,7 +9,7 @@ function App() {
     <BrowserRouter>
     <NavBar />
     <Routes>
-      <Route path="/" element="Hola" />
+      <Route path="/" element={ItemListContainer} />
       <Route path="/categoria/:id" element="Hola" />
       <Route path="/products/:id" element="Hola" />
       <Route path="/cart" element="Hola" />

@@ -1,7 +1,21 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card';
+import { Link, NavLink } from 'react-router-dom';
 
-export default function ItemList({products}) {
+
+ function ItemList({product}) {
   return (
-      <div>hola</div>
-  )
+    <Card key={product.id} style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={product.image} />
+    <Card.Body>
+      <Card.Title>{product.title}</Card.Title>
+      <Card.Text>{product.description}</Card.Text>
+     
+    </Card.Body>
+  </Card>
+  
+)
 }
+
+
+export default ItemDetailContainer;

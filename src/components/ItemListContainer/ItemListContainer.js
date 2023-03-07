@@ -1,9 +1,7 @@
 import { react, useState, useEffect } from "react";
 import axios from "axios";
-import ItemList from "../ItemList/ItemList";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import "./style.css";
+import ItemDetailContainer from "../ItemDetailContainerr/ItemDetailContainer";
 
 function ItemListContainer() {
   const [products, setProducts] = useState([]);
@@ -22,25 +20,8 @@ function ItemListContainer() {
           })
           console.log("products", products); //Verificamos que nos este trayendo los productos 
   }
-
   return (
-      <div>
-      <>
-    {products.map((product) => ( 
-        <div  className="Father">
-        <Card key={product.id}>
-            <Card.Img variant="top" src={product.title} />
-            <Card.Body>
-            <Card.Title Text={product.description}/>
-            </Card.Body>
-            <Button className="botonCard">PickMe</Button>
-        </Card>
-        </div>
-    )
-     )
-    }
-    </>
-</div>
+      <ItemDetailContainer products={products}/>
   );
 }
 
