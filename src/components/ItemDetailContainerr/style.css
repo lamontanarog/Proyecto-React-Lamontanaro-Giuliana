@@ -5,3 +5,8 @@
     text-align: center;
 }
 
+.ImgCards{
+    display:block;
+    max-width:100%;
+    height:300px;
+}
