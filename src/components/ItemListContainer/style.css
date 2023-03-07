@@ -1,0 +1,9 @@
+.Father{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+.botonCard{
+    display: inline-block;
+}
