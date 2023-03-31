@@ -22,5 +22,5 @@ export default function ItemDetailContainer({ product, ItemDetail }) {
         </Card>
       </div>
     </>
-  );
+    );
 }
